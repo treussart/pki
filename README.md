@@ -68,7 +68,7 @@ ssl_cipher_list = ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSKALL:!aNULL:!eNULL:
     disabledProtocols: TLS1_0,TLS1_1
 ```
 ## Email encryption
-Preferably use OpenGPG but otherwise:
+Preferably use [OpenGPG](https://www.openpgp.org/) but otherwise:
 ```
 Encrypt :
 openssl smime -encrypt  -in file.txt -out file.txt.enc -outform PEM mail.example.com.pem
