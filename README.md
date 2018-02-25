@@ -31,3 +31,20 @@ DNS.1 = www.example.com
 # Create Certificate for Email servers (Postfix, Dovecot ...)
 ./pki.sh cert mail
 ```
+
+## Configure your services
+### Apache
+```
+        SSLProtocol +TLSv1.2
+        SSLCipherSuite ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSK
+        SSLCertificateFile /etc/ssl/certs/web.example.com.bundle.pem
+        SSLCertificateKeyFile /etc/ssl/private/example.com-web.key
+```
+### Postfix
+```
+smtpd_tls_cert_file=/etc/ssl/certs/mail.example.com.pem
+smtpd_tls_key_file=/etc/ssl/private/example.com-mail.key
+smtpd_tls_CAfile = /etc/ssl/certs/example.com-ca.pem
+smtpd_tls_mandatory_ciphers = high
+smtpd_tls_mandatory_exclude_ciphers = LOW, 3DES, MD5, EXP, CBC, PSK, SRP, DSS, RC4, aNULL, eNULL
+```
