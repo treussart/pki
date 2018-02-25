@@ -48,3 +48,11 @@ smtpd_tls_CAfile = /etc/ssl/certs/example.com-ca.pem
 smtpd_tls_mandatory_ciphers = high
 smtpd_tls_mandatory_exclude_ciphers = LOW, 3DES, MD5, EXP, CBC, PSK, SRP, DSS, RC4, aNULL, eNULL
 ```
+### Dovecot
+```
+ssl = required
+ssl_cert = </etc/ssl/certs/mail.example.com.bundle.pem
+ssl_key = </etc/ssl/private/example.com-mail.key
+ssl_protocols = TLSv1.2
+ssl_cipher_list = ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSKALL:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!CBC:!PSK:!SRP:!DSS:!RC4
+```
