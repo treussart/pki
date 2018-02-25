@@ -1,6 +1,8 @@
 # pki
 Easily create certificate X509 for Web and Email
 
+KISSS Principle : Keep it simple, stupid and Secure
+
 ## Requirements
   * OpenSSL
   * Bash
