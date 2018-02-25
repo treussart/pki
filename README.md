@@ -19,6 +19,7 @@ Edit *.extensions.ini
 ```
 [ my_subject_alt_names ]
 DNS.1 = www.example.com
+...
 ```
 
 ## Usage
