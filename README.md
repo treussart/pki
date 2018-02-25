@@ -5,6 +5,22 @@ Easily create certificate X509 for Web and Email
   * OpenSSL
   * Bash
 
+## Configuration
+Edit pki.sh
+```
+name="Example"
+tld=".com"
+sld="example"
+dest_cert=""
+dest_key=""
+days="3652"
+```
+Edit *.extensions.ini
+```
+[ my_subject_alt_names ]
+DNS.1 = www.example.com
+```
+
 ## Usage
 ```
 # Create Certificate Authority
