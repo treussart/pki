@@ -53,6 +53,7 @@ create_cert(){
 bundle() {
     # Add ca to the certificate for a domain
     cat "$dest_cert""$TYPE"."$sld""$tld".pem "$dest_cert""$sld""$tld"-ca.pem > "$dest_cert""$TYPE"."$sld""$tld"-bundle.pem
+    cat "$dest_key""$sld""$tld"-"$TYPE".key "$dest_cert""$TYPE"."$sld""$tld"-bundle.pem > "$dest_key""$TYPE"."$sld""$tld"-mongodb.pem
 }
 
 verify(){
