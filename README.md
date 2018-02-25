@@ -70,5 +70,9 @@ ssl_cipher_list = ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSKALL:!aNULL:!eNULL:
 ## Email encryption
 Preferably use OpenGPG but otherwise:
 ```
+Encrypt :
 openssl smime -encrypt  -in file.txt -out file.txt.enc -outform PEM mail.example.com.pem
+Decrypt :
+openssl smime -decrypt  -in file.txt.enc -out file.txt -inform PEM -inkey example.com-mail.key
+
 ```
