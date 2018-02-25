@@ -12,9 +12,12 @@ days="3652"
 TYPE=""
 CN_CA="$name"" Authority"
 CN_CERT=""
-CN_CERT_WEB="$name"" Server"
+CN_CERT_SERVER="$name"" Server"
 CN_CERT_EMAIL="$name"" Email"
-EXTENSIONS="extensions.ini"
+EXTENSIONS=""
+EXTENSIONS_SERVER="server.extensions.ini"
+EXTENSIONS_MAIL="mail.extensions.ini"
+
 
 generate_ca() {
     if [ -f "$dest_key""$sld""$tld"-ca.key ]; then
@@ -67,11 +70,13 @@ else
         generate_ca
     elif [ "$1" == 'cert' ]; then
         if [ ! -z $2 ]; then
-            if [[ "$2" == 'web' ]]; then
-                CN_CERT="$CN_CERT_WEB"
+            if [[ "$2" == 'server' ]]; then
+                CN_CERT="$CN_CERT_SERVER"
+                EXTENSIONS="$EXTENSIONS_SERVER"
                 TYPE="$2"
             elif [[ "$2" == 'mail' ]]; then
                 CN_CERT="$CN_CERT_EMAIL"
+                EXTENSIONS="$EXTENSIONS_MAIL"
                 TYPE="$2"
             else
                 echo 'Bad argument'
