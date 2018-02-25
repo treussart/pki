@@ -62,7 +62,7 @@ ssl_cipher_list = ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSKALL:!aNULL:!eNULL:
 ```
   ssl:
     mode: requireSSL
-    PEMKeyFile: /etc/ssl/private/web.example.com-bundle-all.pem
+    PEMKeyFile: /etc/ssl/private/web.example.com-key.pem
     CAFile: /etc/ssl/certs/example.com-ca.pem
     allowConnectionsWithoutCertificates: true
     disabledProtocols: TLS1_0,TLS1_1
