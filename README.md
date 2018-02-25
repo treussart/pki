@@ -17,7 +17,7 @@ dest_cert=""
 dest_key=""
 days="3652"
 ```
-Edit server.extensions.ini
+Edit *.extensions.ini
 ```
 [ my_subject_alt_names ]
 DNS.1 = www.example.com
