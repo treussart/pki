@@ -58,10 +58,9 @@ ssl_cipher_list = ECDH:!DH:!RSA:!RSAPSK:!DHEPSK:!ECDHEPSK:!PSKALL:!aNULL:!eNULL:
 ```
 ### MongoDB
 ```
-cat /etc/ssl/private/example.com-web.key /etc/ssl/certs/web.example.com.pem > /etc/ssl/private/mongodb.example.com.pem
   ssl:
     mode: requireSSL
-    PEMKeyFile: /etc/ssl/private/mongodb.example.com.pem
+    PEMKeyFile: /etc/ssl/private/web.example.com-bundle-all.pem
     allowConnectionsWithoutCertificates: true
     disabledProtocols: TLS1_0,TLS1_1
 ```
