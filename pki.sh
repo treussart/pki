@@ -29,7 +29,7 @@ generate_ca() {
     # clean
     rm "$dest_key"*.csr
     # Generate ca
-    openssl req -x509 -newkey rsa:4096 -keyout "$dest_key""$sld""$tld"-ca.key -out "$dest_cert""$sld""$tld"-ca.pem -days "$days" -nodes -subj '/CN='"$CN_CA" -sha256
+    openssl req -x509 -newkey rsa:4096 -keyout "$dest_key""$sld""$tld"-ca.key -out "$dest_cert""$sld""$tld"-ca.pem -days "$days" -subj '/CN='"$CN_CA" -sha256
     # Show the ca
     openssl x509 -text -noout -in "$dest_cert""$sld""$tld"-ca.pem
 }
