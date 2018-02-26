@@ -38,7 +38,7 @@ generate_ca() {
 generate_csr(){
     if [ ! -f "$dest_key""$TYPE"."$sld""$tld".csr ]; then
         # Generate a csr
-        openssl req -new -keyout "$dest_key""$sld""$tld"-"$TYPE".key -nodes -out "$dest_key""$TYPE"."$sld""$tld".csr -sha256 -subj '/CN='"$CN_CERT"
+        openssl req -new -newkey rsa:4096 -keyout "$dest_key""$sld""$tld"-"$TYPE".key -nodes -out "$dest_key""$TYPE"."$sld""$tld".csr -sha256 -subj '/CN='"$CN_CERT"
         # Show the csr
         openssl req -in "$dest_key""$TYPE"."$sld""$tld".csr -noout -text
     fi
